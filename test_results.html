@@ -1,0 +1,412 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+
+
+    <h2><span style="color:red;">44 Failed</span> out of 44</h2>
+        <button type="button" class="collapsible" style="color:red">
+        Verify Example Test</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain verify verify/example.source verify/example.target &gt; verify/example.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Verify Example Test - Failed!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>Verification passed<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Actual Output:</p><p></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Verify Example Test - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain verify verify/example.source verify/example.target &gt; verify/example.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Verify Example Test has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Verify - source has more transactions than target</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain verify verify/longerSource.source verify/longerSource.target &gt; verify/longerSource.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Verify - source has more transactions than target - Failed!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>Verification failed<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Actual Output:</p><p></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Verify - source has more transactions than target - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain verify verify/longerSource.source verify/longerSource.target &gt; verify/longerSource.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Verify - source has more transactions than target has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Verify - target has more trnasactions than source</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain verify verify/shorterSource.source verify/shorterSource.target &gt; verify/shorterSource.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Verify - target has more trnasactions than source - Failed!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>Verification failed<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Actual Output:</p><p></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Verify - target has more trnasactions than source - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain verify verify/shorterSource.source verify/shorterSource.target &gt; verify/shorterSource.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Verify - target has more trnasactions than source has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Verify Invalid Hash Test</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain verify verify/invalidHash.source verify/invalidHash.target &gt; verify/invalidHash.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Verify Invalid Hash Test - Failed!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>Verification failed<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Actual Output:</p><p></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Verify Invalid Hash Test - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain verify verify/invalidHash.source verify/invalidHash.target &gt; verify/invalidHash.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Verify Invalid Hash Test has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Hash Example Test</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain hash hash/example.source hash/example.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Hash Example Test - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>07214b658f243aad98fd<br/>16305a749e47698badcf<br/>07ed4b218fcfe1332544<br/>ad8be1cf25edc3210765</p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'hash/example.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Hash Example Test - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain hash hash/example.source hash/example.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Hash Example Test has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Hash - uncompressed BlockChain</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain hash hash/uncompressed.source hash/uncompressed.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Hash - uncompressed BlockChain - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>07214b658f243aad98fd<br/>ad8be1cf258e90073257<br/>ad8be1cf258e90073257<br/>07214b658f243aad98fd<br/>16305a749e47698badcf<br/>07214b658f243aad98fd<br/>07ed4b218fcfe1332544<br/>ad8be1cf25edc3210765</p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'hash/uncompressed.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Hash - uncompressed BlockChain - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain hash hash/uncompressed.source hash/uncompressed.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Hash - uncompressed BlockChain has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Hash - long hash key</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain hash hash/longHashKey.source hash/longHashKey.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Hash - long hash key - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>adcfe1032547698badcf<br/>adcfe1032547698badcf<br/>07214b658f243aad98fd</p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'hash/longHashKey.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Hash - long hash key - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain hash hash/longHashKey.source hash/longHashKey.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Hash - long hash key has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Hash Single Transaction Test</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain hash hash/singleTransaction.source hash/singleTransaction.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Hash Single Transaction Test - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>07ed4b218fcfe1332544</p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'hash/singleTransaction.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Hash Single Transaction Test - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain hash hash/singleTransaction.source hash/singleTransaction.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Hash Single Transaction Test has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Hash Special Characters Test</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain hash hash/specialChars.source hash/specialChars.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Hash Special Characters Test - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>ad8be1cf25fcd2301674</p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'hash/specialChars.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Hash Special Characters Test - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain hash hash/specialChars.source hash/specialChars.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Hash Special Characters Test has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress Example Test</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/example.source compress/example.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress Example Test - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>BlockChain Info:<br/>1.<br/>Sender Name: baraa<br/>Receiver Name: adi<br/>Transaction Value: 60<br/>Transaction timestamp: 20:40<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'compress/example.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress Example Test - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/example.source compress/example.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress Example Test has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress short interval</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/shortInterval.source compress/shortInterval.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress short interval - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>BlockChain Info:<br/>1.<br/>Sender Name: baraa<br/>Receiver Name: adi<br/>Transaction Value: 150<br/>Transaction timestamp: 20:21<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'compress/shortInterval.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress short interval - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/shortInterval.source compress/shortInterval.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress short interval has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress - no transactions to compress</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/nothingToCompress.source compress/nothingToCompress.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress - no transactions to compress - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>BlockChain Info:<br/>1.<br/>Sender Name: baraa<br/>Receiver Name: adi<br/>Transaction Value: 10<br/>Transaction timestamp: 20:40<br/>2.<br/>Sender Name: baraa<br/>Receiver Name: shlomi<br/>Transaction Value: 10<br/>Transaction timestamp: 20:30<br/>3.<br/>Sender Name: gary<br/>Receiver Name: adi<br/>Transaction Value: 20<br/>Transaction timestamp: 20:20<br/>4.<br/>Sender Name: test<br/>Receiver Name: adi<br/>Transaction Value: 20<br/>Transaction timestamp: 20:20<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'compress/nothingToCompress.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress - no transactions to compress - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/nothingToCompress.source compress/nothingToCompress.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress - no transactions to compress has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress - specific numbers</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/specificNumbers.source compress/specificNumbers.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress - specific numbers - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>BlockChain Info:<br/>1.<br/>Sender Name: baraa<br/>Receiver Name: adi<br/>Transaction Value: 865044<br/>Transaction timestamp: 20:21<br/>2.<br/>Sender Name: baraa<br/>Receiver Name: liav<br/>Transaction Value: 341<br/>Transaction timestamp: 20:19<br/>3.<br/>Sender Name: baraa<br/>Receiver Name: adi<br/>Transaction Value: 3921<br/>Transaction timestamp: 20:19<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'compress/specificNumbers.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress - specific numbers - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/specificNumbers.source compress/specificNumbers.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress - specific numbers has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress separate chunks test</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/compressChunks.source compress/compressChunks.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress separate chunks test - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>BlockChain Info:<br/>1.<br/>Sender Name: baraa<br/>Receiver Name: adi<br/>Transaction Value: 20<br/>Transaction timestamp: 20:40<br/>2.<br/>Sender Name: regev<br/>Receiver Name: adi<br/>Transaction Value: 30<br/>Transaction timestamp: 20:30<br/>3.<br/>Sender Name: baraa<br/>Receiver Name: adi<br/>Transaction Value: 20<br/>Transaction timestamp: 20:20<br/>4.<br/>Sender Name: baraa<br/>Receiver Name: regev<br/>Transaction Value: 30<br/>Transaction timestamp: 20:40<br/>5.<br/>Sender Name: regev<br/>Receiver Name: adi<br/>Transaction Value: 15<br/>Transaction timestamp: 20:30<br/>6.<br/>Sender Name: daniel<br/>Receiver Name: baraa<br/>Transaction Value: 100<br/>Transaction timestamp: 20:20<br/>7.<br/>Sender Name: baraa<br/>Receiver Name: Daniel<br/>Transaction Value: 70<br/>Transaction timestamp: 20:20<br/>8.<br/>Sender Name: baraa<br/>Receiver Name: adi<br/>Transaction Value: 20<br/>Transaction timestamp: 20:20<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'compress/compressChunks.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress separate chunks test - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/compressChunks.source compress/compressChunks.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress separate chunks test has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress - invalid date</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/invalidDate.source compress/invalidDate.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress - invalid date - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>BlockChain Info:<br/>1.<br/>Sender Name: baraa<br/>Receiver Name: adi<br/>Transaction Value: 31<br/>Transaction timestamp: 20:91<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'compress/invalidDate.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Compress - invalid date - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain compress compress/invalidDate.source compress/invalidDate.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Compress - invalid date has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Format Example Test</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain format format/example.source format/example.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Format Example Test - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>BlockChain Info:<br/>1.<br/>Sender Name: baraa<br/>Receiver Name: regev<br/>Transaction Value: 30<br/>Transaction timestamp: 20:40<br/>2.<br/>Sender Name: regev<br/>Receiver Name: adi<br/>Transaction Value: 15<br/>Transaction timestamp: 20:30<br/>3.<br/>Sender Name: daniel<br/>Receiver Name: baraa<br/>Transaction Value: 100<br/>Transaction timestamp: 20:20<br/>4.<br/>Sender Name: baraa<br/>Receiver Name: daniel<br/>Transaction Value: 20<br/>Transaction timestamp: 20:20<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'format/example.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Format Example Test - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain format format/example.source format/example.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Format Example Test has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Format - Special Chars</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain format format/specialChars.source format/specialChars.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Format - Special Chars - Failed due to an error in the tester!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>BlockChain Info:<br/>1.<br/>Sender Name: bar$@K<br/>Receiver Name: Regev<br/>Transaction Value: 30<br/>Transaction timestamp: 20:40<br/>2.<br/>Sender Name: __first<br/>Receiver Name: name__<br/>Transaction Value: 15<br/>Transaction timestamp: 20:30<br/>3.<br/>Sender Name: SPECIAL<br/>Receiver Name: CHAR<br/>Transaction Value: 100<br/>Transaction timestamp: 20:20<span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Error:</p><p>Test failed to provide output. Exception: [Errno 2] No such file or directory: 'format/specialChars.target.out'</p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Format - Special Chars - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain format format/specialChars.source format/specialChars.target.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Format - Special Chars has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Misc - no params</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain &gt; misc/noParams.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Misc - no params - Failed!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>Usage: ./mtm_blockchain &lt;op&gt; &lt;source&gt; &lt;target&gt;<span style="background-color: #BE5103;">&nbsp;</span><span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Actual Output:</p><p></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Misc - no params - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain &gt; misc/noParams.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Misc - no params has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Misc - too few params</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain verify 9   &gt; misc/tooFewParams.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Misc - too few params - Failed!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>Usage: ./mtm_blockchain &lt;op&gt; &lt;source&gt; &lt;target&gt;<span style="background-color: #BE5103;">&nbsp;</span><span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Actual Output:</p><p></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Misc - too few params - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain verify 9   &gt; misc/tooFewParams.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Misc - too few params has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Misc - too many params</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain verify 9 misc/tooFewParams.source misc/tooFewParams.target &gt; misc/tooManyParams.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Misc - too many params - Failed!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>Usage: ./mtm_blockchain &lt;op&gt; &lt;source&gt; &lt;target&gt;<span style="background-color: #BE5103;">&nbsp;</span><span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Actual Output:</p><p></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Misc - too many params - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain verify 9 misc/tooFewParams.source misc/tooFewParams.target &gt; misc/tooManyParams.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Misc - too many params has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Misc - invalid operation - empty params</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain append   &gt; misc/invalidOperation.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Misc - invalid operation - empty params - Failed!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>Usage: ./mtm_blockchain &lt;op&gt; &lt;source&gt; &lt;target&gt;<span style="background-color: #BE5103;">&nbsp;</span><span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Actual Output:</p><p></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Misc - invalid operation - empty params - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain append   &gt; misc/invalidOperation.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Misc - invalid operation - empty params has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Misc - invalid operation - valid params</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests &&  /home/reutdokow/Matam_HW1/mtm_blockchain append misc/invalidOperation.source misc/invalidOperation.target &gt; misc/invalidOperation.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Misc - invalid operation - valid params - Failed!</p><div class="grid-container-element"><div class="grid-child-element"><p>Expected Output:</p><p>Usage: ./mtm_blockchain &lt;op&gt; &lt;source&gt; &lt;target&gt;<span style="background-color: #BE5103;">&nbsp;</span><span style="background-color: orange;">\n</span><br/></p></div><div class="grid-child-element"><p>Actual Output:</p><p></p></div></div></p>
+</div>
+
+        <button type="button" class="collapsible" style="color:red">
+        Misc - invalid operation - valid params - Valgrind</button>
+<div class="content">
+  <p>Test Command:</p><code>export TESTER_TMP_PWD=$(pwd) && cd ./TechnionMatam/HW1/tests && valgrind --leak-check=full  /home/reutdokow/Matam_HW1/mtm_blockchain append misc/invalidOperation.source misc/invalidOperation.target &gt; misc/invalidOperation.out && cd $TESTER_TMP_PWD && unset TESTER_TMP_PWD</code>
+  <p><p>Misc - invalid operation - valid params has leaks!<br/>Failed due to an error raised by Valgrind!</p><div class="grid-container-element"><div class="grid-child-element"><p>Error:</p><p>valgrind: /home/reutdokow/Matam_HW1/mtm_blockchain: No such file or directory<span style="background-color: orange;">\n</span><br/></p></div></div></p>
+</div>
+
+</body>
+</html>
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+</script>
+<style>
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+  background-color: #ccc;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+.collapsible:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: white;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+</style>
+<style>
+.content {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
+<style>
+.grid-container-element { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 20px; 
+    width: 80%; 
+} 
+.grid-child-element { 
+    margin: 10px; 
+    border: 1px solid red; 
+}
+</style>
+
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    }
+  });
+}
+</script>
+    

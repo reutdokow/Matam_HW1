@@ -20,7 +20,9 @@ typedef unsigned int (*updateFunction)(unsigned int);
  *
 */
 struct BlockChain {
-    // You may add any fields you believe are necessary
+    Transaction* data;
+    string timestamp;
+    BlockChain *next;
 };
 
 
@@ -44,6 +46,13 @@ int BlockChainGetSize(const BlockChain& blockChain);
 */
 int BlockChainPersonalBalance(const BlockChain& blockChain, const string& name);
 
+/**
+BlockChain* createBlock (
+    unsigned int value,
+    const string& sender,
+    const string& receiver,
+    const string& timestamp);
+*/
 
 /**
  * BlockChainAppendTransaction - creates and appends a new transaction to the BlockChain
@@ -75,6 +84,15 @@ void BlockChainAppendTransaction(
         const Transaction& transaction,
         const string& timestamp
 );
+
+//TODO: add docu
+void BlockChainAppendTransaction(
+        BlockChain& old_head,
+        BlockChain& new_head
+);
+
+//TODO: documment
+Transaction* getTransaction(unsigned int value,const string sender,const string receiver);
 
 
 /**
@@ -157,3 +175,4 @@ void BlockChainCompress(BlockChain& blockChain);
  * @param function a pointer to a transform function
 */
 void BlockChainTransform(BlockChain& blockChain, updateFunction function);
+

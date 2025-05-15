@@ -1,0 +1,1 @@
+/usr/bin/g++ -g CMakeFiles/Matam_HW1.dir/Transaction.cpp.o CMakeFiles/Matam_HW1.dir/Utilities.cpp.o CMakeFiles/Matam_HW1.dir/BlockChain.cpp.o CMakeFiles/Matam_HW1.dir/main.cpp.o -o Matam_HW1 

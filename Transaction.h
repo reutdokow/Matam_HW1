@@ -56,3 +56,4 @@ bool TransactionVerifyHashedMessage(
         const Transaction& transaction,
         string hashedMessage
 );
+

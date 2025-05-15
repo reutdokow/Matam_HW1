@@ -1,0 +1,3 @@
+/home/reutdokow/Matam_HW1/cmake-build-debug/CMakeFiles/Matam_HW1.dir
+/home/reutdokow/Matam_HW1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/reutdokow/Matam_HW1/cmake-build-debug/CMakeFiles/rebuild_cache.dir

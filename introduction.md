@@ -16,11 +16,11 @@ To make things a bit more fun, each TA added a link to song/video we would like 
 
 Tell us a bit about yourselves! 
 
-	- First student's name:
-	- Favorite singer:
-	- Favorite song:
-	- Desirable grade in Matam:
-	- which TA's song you liked the most:
+	- First student's name:Reut Dokow
+	- Favorite singer:Omer Adam
+	- Favorite song:Names Mimech
+	- Desirable grade in Matam:100
+	- which TA's song you liked the most:Ten Li Levad
 
 	- Second student's name:
 	- Favorite singer:
