@@ -199,12 +199,17 @@ bool BlockChainVerifyFile(const BlockChain& blockChain, std::ifstream& file)
             ptr = ptr->next;
             continue;
         }
-        getline(file, curr_line);
+        if (!std::getline(file, curr_line)) {
+            return false;
+        }
         if (!TransactionVerifyHashedMessage(*ptr->data,curr_line))
         {
             return false;
         }
         ptr = ptr -> next;
+    }
+    if (std::getline(file, curr_line)) {
+        return false;
     }
     return true;
 }
