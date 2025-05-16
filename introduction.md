@@ -17,10 +17,10 @@ To make things a bit more fun, each TA added a link to song/video we would like 
 Tell us a bit about yourselves! 
 
 	- First student's name:Reut Dokow
-	- Favorite singer:Omer Adam
-	- Favorite song:Shnei Meshugaim
+	- Favorite singer:Moshe Peretz
+	- Favorite song:Hi rak rotza lirkod
 	- Desirable grade in Matam:100
-	- which TA's song you liked the most:Ten Li Levad
+	- which TA's song you liked the most:all
 
 	- Second student's name: Klil Beno
 	- Favorite singer:Demi Lovato
