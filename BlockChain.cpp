@@ -224,7 +224,10 @@ void BlockChainCompress(BlockChain& blockChain)
             current->timestamp = current->next->timestamp;
             BlockChain* BlocktoDelete = current -> next;
             current->next = BlocktoDelete->next;
-            delete BlocktoDelete -> data;
+
+            delete current->data;
+            current->data = BlocktoDelete->data;
+
             delete BlocktoDelete;
         }
         else
@@ -258,12 +261,7 @@ void BlockChainDestroy (BlockChain& block_chain)
         delete current;
         current = next;
     }
-    if (block_chain.data != nullptr)
-    {
-        delete block_chain.data;
-        block_chain.data = nullptr;
-
-    }
+    block_chain.data = nullptr;
     block_chain.next = nullptr;
     block_chain.timestamp = "";
 }
