@@ -42,7 +42,7 @@ int main (int argc, char* argv[])
     {
         BlockChainCompress(block_chain);
         ofstream target_file(argv[TARGET]);
-        BlockChainDumpHashed(block_chain,target_file);
+        BlockChainDump(block_chain, target_file);
     }
     else if (operation == "verify")
     {

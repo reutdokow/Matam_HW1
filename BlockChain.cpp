@@ -102,7 +102,6 @@ void BlockChainAppendTransaction(
         ptr = ptr->next;
     }
     ptr->next = new_block;
-    delete tran;
 }
 
 
