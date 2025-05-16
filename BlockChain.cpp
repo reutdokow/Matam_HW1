@@ -191,7 +191,7 @@ bool BlockChainVerifyFile(const BlockChain& blockChain, std::ifstream& file)
 
 void BlockChainCompress(BlockChain& blockChain)
 {
-    BlockChain* current = &blockChain;
+    BlockChain* current = blockChain.next;
 
     while (current != nullptr && current->next != nullptr)
     {
