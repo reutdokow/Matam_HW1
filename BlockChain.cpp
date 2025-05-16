@@ -221,7 +221,7 @@ void BlockChainCompress(BlockChain& blockChain)
 
     while (current != nullptr && current->next != nullptr)
     {
-        if (current->data != nullptr && current->next->data != nullptr &&
+        if (current-> data!= nullptr && current->next->data != nullptr &&
             current->data->sender == current->next->data->sender &&
             current->data->receiver == current->next->data->receiver)
         {
@@ -234,6 +234,7 @@ void BlockChainCompress(BlockChain& blockChain)
             current->data = BlocktoDelete->data;
 
             delete BlocktoDelete;
+            continue;
         }
         else
         {
