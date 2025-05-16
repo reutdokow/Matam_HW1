@@ -206,7 +206,6 @@ void BlockChainCompress(BlockChain& blockChain)
 
             delete BlocktoDelete->data;
             delete BlocktoDelete;
-            continue;
         }
         else
         {
