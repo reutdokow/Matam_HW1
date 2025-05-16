@@ -195,9 +195,10 @@ void BlockChainCompress(BlockChain& blockChain)
 
     while (current != nullptr && current->next != nullptr)
     {
-        if (current->data != nullptr && current->next->data != nullptr &&
-            current->data->sender == current->next->data->sender &&
-            current->data->receiver == current->next->data->receiver)
+        while (current->next != nullptr &&
+               current->data != nullptr && current->next->data != nullptr &&
+               current->data->sender == current->next->data->sender &&
+               current->data->receiver == current->next->data->receiver)
         {
             current->data->value += current->next->data->value;
             current->timestamp = current->next->timestamp;
@@ -208,10 +209,8 @@ void BlockChainCompress(BlockChain& blockChain)
             delete blockToDelete->data;
             delete blockToDelete;
         }
-        else
-        {
-            current = current->next;
-        }
+
+        current = current->next;
     }
 }
 
