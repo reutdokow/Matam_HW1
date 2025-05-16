@@ -50,11 +50,11 @@ int main (int argc, char* argv[])
         std::ifstream new_target_file(argv[TARGET]);
         if (BlockChainVerifyFile(block_chain,new_target_file))
         {
-            printVerificationStatus(true);
+            cout << "Verification passed" << std::endl;
         }
         else
         {
-            printVerificationStatus(false);
+            cout << "Verification failed" << std::endl;
         }
     }
     BlockChainDestroy(block_chain);
