@@ -85,6 +85,7 @@ void BlockChainAppendTransaction(
 {
     Transaction* trans = getTransaction(value,sender,receiver);
     BlockChainAppendTransaction(blockChain,*trans,timestamp);
+    delete trans;
 }
 
 
