@@ -18,7 +18,7 @@ Tell us a bit about yourselves!
 
 	- First student's name:Reut Dokow
 	- Favorite singer:Omer Adam
-	- Favorite song:Names Mimech
+	- Favorite song:Shnei Meshugaim
 	- Desirable grade in Matam:100
 	- which TA's song you liked the most:Ten Li Levad
 
