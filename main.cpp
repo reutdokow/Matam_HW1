@@ -18,23 +18,40 @@ int main (int argc, char* argv[])
 {
     if (argc != Expected_args)
     {
-        ///error
+        cout << getErrorMessage();
+        return -1;
     }
 
+    string operation = argv[OPERATION];
+    std::ifstream source_file(argv[SOURCE]);
+    std::ofstream target_file(argv[TARGET]);
+    std::ifstream new_target_file(argv[TARGET]);
+
+    BlockChain block_chain = BlockChainLoad(source_file);
     if (operation == "format")
     {
-
+        BlockChainDump(block_chain,target_file);
     }
-    if (operation == "hash")
+    else if (operation == "hash")
     {
-
+        BlockChainDumpHashed(block_chain,target_file);
     }
-    if (operation == "compress")
+    else if (operation == "compress")
     {
-
+        BlockChainCompress(block_chain);
+        BlockChainDump(block_chain,target_file);
     }
-    if (operation == "verify")
+    else if (operation == "verify")
     {
-
+        if (BlockChainVerifyFile(block_chain,new_target_file))
+        {
+            cout << "Verification passed";
+        }
+        else
+        {
+            cout << "Verification failed";
+        }
     }
+    BlockChainDestroy(block_chain);
+    return 0;
 }

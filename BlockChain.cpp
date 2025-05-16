@@ -3,12 +3,15 @@
 #include "BlockChain.h"
 #include <fstream>
 #include <string>
+#include <iostream>
+
 
 using std::string;
 using std::ifstream;
 using std::ofstream;
 using std::getline;
 using std::endl;
+
 
 
 
@@ -22,10 +25,11 @@ Transaction* getTransaction(const Transaction& transaction)
 
 Transaction* getTransaction(unsigned int value,const string sender,const string receiver)
 {
- Transaction* temp = new Transaction();
+    Transaction* temp = new Transaction();
     temp->value = value;
     temp->sender = sender;
     temp->receiver = receiver;
+    return temp;
 }
 
 
@@ -38,6 +42,7 @@ const string& timestamp)
     temp->data = transaction;
     temp->next = nullptr;
     temp->timestamp = timestamp;
+    return temp;
 }
 
 int BlockChainGetSize(const BlockChain& blockChain)
@@ -70,23 +75,6 @@ int BlockChainPersonalBalance(const BlockChain& blockChain, const string& name)
 }
 
 
-#if 0
-BlockChain* createBlock (
-    unsigned int value,
-    const string& sender,
-    const string& receiver,
-    const string& timestamp)
-{
-    BlockChain* new_block = new BlockChain;
-    new_block -> data->value = value;
-    new_block -> data.sender = sender;
-    new_block -> data.receiver = receiver;
-    new_block -> timestamp = timestamp;
-    new_block -> next = nullptr;
-    return new_block;
-}
-#endif
-
 void BlockChainAppendTransaction(
     BlockChain& blockChain,
     unsigned int value,
@@ -107,10 +95,12 @@ void BlockChainAppendTransaction(
 )
 {
     Transaction* tran = getTransaction(transaction);
-    BlockChain* new_block = getBlockChain(tran,timestamp);
-    BlockChainAppendTransaction(blockChain,*new_block);
+    BlockChain* new_block = getBlockChain(tran, timestamp);
+    new_block->next = blockChain.next;
+    blockChain.next = new_block;
 }
 
+/*
 void BlockChainAppendTransaction(
         BlockChain& head,
         BlockChain& new_data
@@ -128,34 +118,45 @@ void BlockChainAppendTransaction(
     head.next = &new_data;
 
 }
+*/
+
+
+
 
 BlockChain BlockChainLoad(ifstream& file)
 {
-
-}
-
-void HelperBlockChainDump(const BlockChain& blockChain, ofstream& file, int num)
-{
-    if(blockChain.next != nullptr)
+    BlockChain head = BlockChain();
+    string sender, receiver, timestamp;
+    unsigned int value;
+    while (file >> sender >> receiver >> value >> timestamp)
     {
-        HelperBlockChainDump(*blockChain.next, file, num);
+        BlockChainAppendTransaction(head,value,sender,receiver,timestamp);
     }
-    num++;
-    file << num << "." << endl;
-    file << "Sender Name: " << blockChain.data->sender << endl;
-    file << "Receiver Name: " << blockChain.data->receiver << endl;
-    file << "Transaction Value: " << blockChain.data->value << endl;
-    file << "Transaction timestamp: " << blockChain.timestamp << endl;
-    file << endl;
+    return head;
 }
-
 
 void BlockChainDump(const BlockChain& blockChain, ofstream& file)
 {
 
     file << "BlockChain Info:" << endl;
     int num = 0;
-    HelperBlockChainDump(blockChain,file,num);
+    const BlockChain* ptr = &blockChain;
+    while (ptr != nullptr)
+    {
+        if (ptr->data == nullptr)
+        {
+            ptr = ptr->next;
+            continue;
+        }
+        num++;
+        file << num << "." << endl;
+        file << "Sender Name: " << ptr->data->sender << endl;
+        file << "Receiver Name: " << ptr->data->receiver << endl;
+        file << "Transaction Value: " << ptr->data->value << endl;
+        file << "Transaction timestamp: " << ptr->timestamp << endl;
+        file << endl;
+        ptr = ptr -> next;
+    }
 }
 
 
@@ -164,6 +165,11 @@ void BlockChainDumpHashed(const BlockChain& blockChain, ofstream& file)
     const BlockChain* ptr = &blockChain;
     while (ptr != nullptr)
     {
+        if (ptr->data == nullptr)
+        {
+            ptr = ptr->next;
+            continue;
+        }
         string curr_hash = hash (ptr->data->value, ptr->data->sender,ptr->data->receiver);
         if (ptr -> next != nullptr)
         {
@@ -183,10 +189,15 @@ bool BlockChainVerifyFile(const BlockChain& blockChain, std::ifstream& file)
 {
     string curr_line;
     const BlockChain* ptr = &blockChain;
-    while (ptr != nullptr && !file.eof())
+    while (ptr != nullptr)
     {
+        if (ptr->data == nullptr)
+        {
+            ptr = ptr->next;
+            continue;
+        }
         getline(file, curr_line);
-        if (!TransactionVerifyHashedMessage(*blockChain.data,curr_line))
+        if (!TransactionVerifyHashedMessage(*ptr->data,curr_line))
         {
             return false;
         }
@@ -198,7 +209,26 @@ bool BlockChainVerifyFile(const BlockChain& blockChain, std::ifstream& file)
 
 void BlockChainCompress(BlockChain& blockChain)
 {
+    BlockChain* current = &blockChain;
 
+    while (current != nullptr && current->next != nullptr)
+    {
+        if (current->data != nullptr && current->next->data != nullptr &&
+            current->data->sender == current->next->data->sender &&
+            current->data->receiver == current->next->data->receiver)
+        {
+            current->data->value += current->next->data->value;
+            BlockChain* BlocktoDelete = current -> next;
+            current->next = BlocktoDelete->next;
+            delete BlocktoDelete -> data;
+            delete BlocktoDelete;
+        }
+        else
+        {
+            current = current -> next;
+        }
+
+    }
 }
 
 void BlockChainTransform(BlockChain& blockChain, updateFunction function)
@@ -214,5 +244,23 @@ void BlockChainTransform(BlockChain& blockChain, updateFunction function)
 
 
 
+void BlockChainDestroy (BlockChain& block_chain)
+{
+    BlockChain* current = block_chain.next;
+    while (current != nullptr)
+    {
+        BlockChain* next = current -> next;
+        delete current -> data;
+        delete current;
+        current = next;
+    }
+    if (block_chain.data != nullptr)
+    {
+        delete block_chain.data;
+        block_chain.data = nullptr;
 
+    }
+    block_chain.next = nullptr;
+    block_chain.timestamp = "";
+}
 
