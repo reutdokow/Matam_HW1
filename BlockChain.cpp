@@ -230,21 +230,26 @@ void BlockChainTransform(BlockChain& blockChain, updateFunction function)
 
 
 
-void BlockChainDestroy (BlockChain& block_chain)
+void BlockChainDestroy(BlockChain& block_chain)
 {
-    BlockChain* current = block_chain.next;
+    BlockChain* current = &block_chain;
+
     while (current != nullptr)
     {
-        BlockChain* next = current -> next;
-        delete current -> data;
-        delete current;
+        BlockChain* next = current->next;
+
+        if (current->data != nullptr) {
+            delete current->data;
+            current->data = nullptr;
+        }
+
+        if (current != &block_chain) {
+            delete current;
+        }
+
         current = next;
     }
-    if (block_chain.data != nullptr)
-    {
-        delete block_chain.data;
-        block_chain.data = nullptr;
-    }
+
     block_chain.next = nullptr;
     block_chain.timestamp = "";
 }
