@@ -175,7 +175,7 @@ bool BlockChainVerifyFile(const BlockChain& blockChain, std::ifstream& file)
         if (!getline(file, curr_line)) {
             return false;
         }
-        std::cout << TransactionHashedMessage(*ptr->data) << " VS " << curr_line << std::endl;
+
         if (!TransactionVerifyHashedMessage(*ptr->data,curr_line))
         {
             return false;
@@ -195,23 +195,23 @@ void BlockChainCompress(BlockChain& blockChain)
 
     while (current != nullptr && current->next != nullptr)
     {
-        if (current-> data!= nullptr && current->next->data != nullptr &&
+        if (current->data != nullptr && current->next->data != nullptr &&
             current->data->sender == current->next->data->sender &&
             current->data->receiver == current->next->data->receiver)
         {
             current->data->value += current->next->data->value;
             current->timestamp = current->next->timestamp;
-            BlockChain* BlocktoDelete = current -> next;
-            current->next = BlocktoDelete->next;
 
-            delete BlocktoDelete->data;
-            delete BlocktoDelete;
+            BlockChain* blockToDelete = current->next;
+            current->next = blockToDelete->next;
+
+            delete blockToDelete->data;
+            delete blockToDelete;
         }
         else
         {
-            current = current -> next;
+            current = current->next;
         }
-
     }
 }
 
