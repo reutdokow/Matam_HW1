@@ -102,6 +102,7 @@ void BlockChainAppendTransaction(
         ptr = ptr->next;
     }
     ptr->next = new_block;
+    delete tran;
 }
 
 
@@ -155,17 +156,9 @@ void BlockChainDumpHashed(const BlockChain& blockChain, ofstream& file)
             continue;
         }
         string curr_hash = hash (ptr->data->value, ptr->data->sender,ptr->data->receiver);
-        if (ptr -> next != nullptr)
-        {
-            file << curr_hash << endl;
-        }
-        else
-        {
-            file << curr_hash;
-        }
+        file << curr_hash << endl;
         ptr = ptr -> next;
     }
-
 }
 
 
@@ -183,6 +176,7 @@ bool BlockChainVerifyFile(const BlockChain& blockChain, std::ifstream& file)
         if (!getline(file, curr_line)) {
             return false;
         }
+        std::cout << TransactionHashedMessage(*ptr->data) << " VS " << curr_line << std::endl;
         if (!TransactionVerifyHashedMessage(*ptr->data,curr_line))
         {
             return false;
@@ -211,9 +205,7 @@ void BlockChainCompress(BlockChain& blockChain)
             BlockChain* BlocktoDelete = current -> next;
             current->next = BlocktoDelete->next;
 
-            delete current->data;
-            current->data = BlocktoDelete->data;
-
+            delete BlocktoDelete->data;
             delete BlocktoDelete;
             continue;
         }
@@ -248,7 +240,11 @@ void BlockChainDestroy (BlockChain& block_chain)
         delete current;
         current = next;
     }
-    block_chain.data = nullptr;
+    if (block_chain.data != nullptr)
+    {
+        delete block_chain.data;
+        block_chain.data = nullptr;
+    }
     block_chain.next = nullptr;
     block_chain.timestamp = "";
 }

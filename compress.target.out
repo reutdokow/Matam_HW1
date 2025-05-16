@@ -1,0 +1,19 @@
+BlockChain Info:
+1.
+Sender Name: Charlie
+Receiver Name: Alice
+Transaction Value: 20
+Transaction timestamp: 2024-01-03T15:30:00
+
+2.
+Sender Name: Bob
+Receiver Name: Charlie
+Transaction Value: 30
+Transaction timestamp: 2024-01-02T12:00:00
+
+3.
+Sender Name: Alice
+Receiver Name: Bob
+Transaction Value: 50
+Transaction timestamp: 2024-01-01T10:00:00
+

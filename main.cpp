@@ -7,6 +7,7 @@
 using std::cerr;
 using std::string;
 using std::cout;
+using std::endl;
 
 
 #define Expected_args 4
@@ -24,32 +25,36 @@ int main (int argc, char* argv[])
 
     string operation = argv[OPERATION];
     std::ifstream source_file(argv[SOURCE]);
-    std::ofstream target_file(argv[TARGET]);
-    std::ifstream new_target_file(argv[TARGET]);
+
 
     BlockChain block_chain = BlockChainLoad(source_file);
     if (operation == "format")
     {
+        ofstream target_file(argv[TARGET]);
         BlockChainDump(block_chain,target_file);
     }
     else if (operation == "hash")
     {
+        ofstream target_file(argv[TARGET]);
         BlockChainDumpHashed(block_chain,target_file);
     }
     else if (operation == "compress")
     {
         BlockChainCompress(block_chain);
-        BlockChainDump(block_chain,target_file);
+        ofstream target_file(argv[TARGET]);
+        BlockChainDumpHashed(block_chain,target_file);
     }
     else if (operation == "verify")
     {
+        BlockChainCompress(block_chain);
+        std::ifstream new_target_file(argv[TARGET]);
         if (BlockChainVerifyFile(block_chain,new_target_file))
         {
-            cout << "Verification passed";
+            printVerificationStatus(true);
         }
         else
         {
-            cout << "Verification failed";
+            printVerificationStatus(false);
         }
     }
     BlockChainDestroy(block_chain);
