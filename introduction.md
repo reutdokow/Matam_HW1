@@ -22,8 +22,8 @@ Tell us a bit about yourselves!
 	- Desirable grade in Matam:100
 	- which TA's song you liked the most:Ten Li Levad
 
-	- Second student's name:
-	- Favorite singer:
-	- Favorite song:
-	- Desirable grade in Matam:
-	- which TA's song you liked the most: 
+	- Second student's name: Klil Beno
+	- Favorite singer:Demi Lovato
+	- Favorite song:cool for the summer
+	- Desirable grade in Matam:100
+	- which TA's song you liked the most:all 
