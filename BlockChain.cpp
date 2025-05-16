@@ -104,26 +104,6 @@ void BlockChainAppendTransaction(
     ptr->next = new_block;
 }
 
-/*
-void BlockChainAppendTransaction(
-        BlockChain& head,
-        BlockChain& new_data
-)
-{
-    Transaction* temp = head.data;
-    head.data = new_data.data;
-    new_data.data = temp;
-
-    string timestamp_temp = head.timestamp;
-    head.timestamp = new_data.timestamp;
-    new_data.timestamp = timestamp_temp;
-
-    new_data.next = head.next;
-    head.next = &new_data;
-
-}
-*/
-
 
 
 
@@ -200,7 +180,7 @@ bool BlockChainVerifyFile(const BlockChain& blockChain, std::ifstream& file)
             ptr = ptr->next;
             continue;
         }
-        if (!std::getline(file, curr_line)) {
+        if (!getline(file, curr_line)) {
             return false;
         }
         if (!TransactionVerifyHashedMessage(*ptr->data,curr_line))
@@ -209,7 +189,7 @@ bool BlockChainVerifyFile(const BlockChain& blockChain, std::ifstream& file)
         }
         ptr = ptr -> next;
     }
-    if (std::getline(file, curr_line)) {
+    if (getline(file, curr_line)) {
         return false;
     }
     return true;
